@@ -1,4 +1,61 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
     color: $font-main-color;
     background: $background-color;
+}
+
+.grid {
+    margin: 50px auto;
+    width: 70%;
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr;
+    grid-template-areas: "icon title title title title" "info info graph graph graph ";
+}
+
+.icon {
+    grid-area: icon;
+    background-color: $dolartoday-dark;
+}
+
+.title {
+    padding: 10px;
+    color: $font-secondary-color;
+    grid-area: title;
+    background-color: $dolartoday-light;
+    font-family: $header-font;
+    font-size: 39px;
+    span {
+        font-size: 22px;
+    }
+}
+
+.info {
+    grid-area: info;
+    background-color: $font-secondary-color;
+    padding: 10px;
+    font-family: $content-font;
+    font-size: 22px;
+    text-align: center;
+    .date{
+        margin-bottom: 50px;
+    }
+    .price {
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .trm{
+        margin-top: 50px;
+    }
+}
+
+.graph {
+    grid-area: graph;
+    background-color: $font-secondary-color;
+    padding: 10px;
 }
