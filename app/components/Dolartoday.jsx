@@ -175,8 +175,8 @@ export const DolarToday = () => (
 
 
     <div className='grid'>
-        <div className='icon'>icon</div>
-        <div className='title'>DolarToday <span>(Price per U.S Dolar in Venezuela)</span></div>
+        <div className='icon'><img src="https://cdn1.iconfinder.com/data/icons/free-98-icons/32/money-bag_2-128.png" alt="dolartoday"/></div>
+        <div className='title'>DolarToday <span>(Precio por U.S Dolar en Venezuela)</span></div>
         <div className='info'>
             <div className='date'>
                 Diciembre 4, 2017 09:33 AM
