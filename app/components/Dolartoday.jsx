@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import fusioncharts from 'fusioncharts';
-// Load the charts module
 import charts from 'fusioncharts/fusioncharts.charts';
 import ReactFC from 'react-fusioncharts';
+import { getDolarTodayData } from '../actions/DolarToday.jsx';
+export class DolarToday extends Component {
+    componentDidMount() {
+        this.props.getDolarTodayData();
+    }
+    render() {
+        return (
+            <div>
+                {this.props.dt}
+            </div>
+        )
+    }
+};
+
+const mapStateToProps = (state) => {
+    return {
+        dt: state.dolarToday
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getDolarTodayData: () => dispatch(getDolarTodayData())
+    };
+};
+
+export default connect(mapStateToProps, { getDolarTodayData })(DolarToday);
 
 // Pass fusioncharts as a dependency of charts
-charts(FusionCharts)
+/* charts(FusionCharts)
 
 var myDataSource = {
     "chart": {
@@ -27,7 +54,7 @@ var myDataSource = {
         "tooltipGrayOutColor": "#80bfff",
         "theme": "zune",
         "bgColor": "#ffffff",
-        "showBorder": "0" 
+        "showBorder": "0"
     },
     "categories": [{
         "category": [{
@@ -175,7 +202,7 @@ export const DolarToday = () => (
 
 
     <div className='grid'>
-        <div className='icon'><img src="https://cdn1.iconfinder.com/data/icons/free-98-icons/32/money-bag_2-128.png" alt="dolartoday"/></div>
+        <div className='icon'><img src="https://cdn1.iconfinder.com/data/icons/free-98-icons/32/money-bag_2-128.png" alt="dolartoday" /></div>
         <div className='title'>DolarToday <span>(Precio por U.S Dolar en Venezuela)</span></div>
         <div className='info'>
             <div className='date'>
@@ -193,4 +220,4 @@ export const DolarToday = () => (
         </div>
         <div className='graph'><ReactFC {...barChartConfigs} /></div>
     </div>
-);
+); */
